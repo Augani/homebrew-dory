@@ -1,16 +1,17 @@
-# Homebrew Cask for Dory. version + sha256 are bumped automatically by the release workflow.
-# Tap and install:  brew tap Augani/dory https://github.com/Augani/dory && brew install --cask dory
+# Homebrew Cask for Dory. version + sha256 are bumped automatically by the release workflow, which
+# also syncs this file to the Augani/homebrew-dory tap.  Install:  brew install --cask Augani/dory/dory
 cask "dory" do
-  version "0.1.0"
-  sha256 "b365743fbca460f6d334315d601286eb1f7b9f7b1e78b5baf335aed8faf82a21"
+  version "0.2.0"
+  sha256 "31ad465a38bbc10eed41e556a86d85d899b61ece0f67dc60a7b0df3a2aa98660"
 
   url "https://github.com/Augani/dory/releases/download/v#{version}/Dory-#{version}.zip"
   name "Dory"
-  desc "Lightweight native macOS app for Docker and Linux containers on Apple silicon"
+  desc "Lightweight native macOS app for Docker and Linux containers"
   homepage "https://github.com/Augani/dory"
 
-  depends_on macos: :tahoe
-  depends_on arch: :arm64
+  # Universal binary (arm64 + x86_64), minimum macOS 15. Dory's standalone shared-VM engine needs
+  # Apple silicon + macOS 26; Intel and older Macs run against any Docker-compatible engine.
+  depends_on macos: ">= :sequoia"
 
   app "Dory.app"
 
