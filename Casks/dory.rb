@@ -2,7 +2,7 @@
 # also syncs this file to the Augani/homebrew-dory tap.  Install:  brew install --cask Augani/dory/dory
 cask "dory" do
   version "0.3.0"
-  sha256 "2ab9c7256bbe7225b9b34cd257449738a160f13b7eab6250fbef99012d02900a"
+  sha256 "673869f557e300c6c6c8dd93ef1831bed393f42643a764e850d5f15520e34ab1"
 
   url "https://github.com/Augani/dory/releases/download/v#{version}/Dory-#{version}.zip"
   name "Dory"
