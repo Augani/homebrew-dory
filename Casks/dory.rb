@@ -17,10 +17,6 @@ cask "dory" do
   app "Dory.app"
   binary "#{appdir}/Dory.app/Contents/Helpers/dory"
 
-  postflight do
-    system_command "#{appdir}/Dory.app/Contents/Helpers/dory", args: ["install"]
-  end
-
   uninstall quit:   "com.pythonxi.Dory",
             script: {
               executable: "#{appdir}/Dory.app/Contents/Helpers/dory",
